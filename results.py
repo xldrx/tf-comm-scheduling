@@ -2,15 +2,9 @@
 # coding=utf-8
 import numpy as np
 
-from oracle import TimeOracle
 from utils import Efficiency
 
-__author__ = 'xl'
-
-import re
-import pickle
-import os
-from collections import OrderedDict
+__author__ = 'Sayed Hadi Hashemi'
 
 
 class ResultAnalyser:
@@ -35,4 +29,3 @@ class ResultAnalyser:
     def get_a(self):
         a = [e.a for e in self.all_effs]
         return np.mean([min(a), max(a)])
-

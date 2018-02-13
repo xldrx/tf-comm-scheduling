@@ -1,8 +1,7 @@
 #! /usr/bin/env python -u
 # coding=utf-8
-import json
-import re
 import time
+
 import tensorflow as tf
 
 __author__ = 'Sayed Hadi Hashemi'

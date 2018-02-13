@@ -7,6 +7,8 @@ from models import get_base_graph
 from oracle import TimeOracle
 from utils import Timer, Timeline, log_progress
 
+__author__ = 'Sayed Hadi Hashemi'
+
 
 class ExperimentResult:
     def __init__(self, **kwargs):
@@ -66,7 +68,7 @@ class Experiment:
                 continue
             result = ExperimentResult(workers=self._workers, base_model=self._model, batch_size=self._batch_size,
                                       ordering_algorithm=self._ordering_algorithm, stage=stage, steps=steps)
-            with tf.train.MonitoredTrainingSession(master="grpc://{}:2222".format(self._master)) as sess:
+            with tf.train.MonitoredTrainingSession(master=self._master) as sess:
                 # Warm up run
                 sess.run(target)
                 for _ in log_progress(range(steps)):
